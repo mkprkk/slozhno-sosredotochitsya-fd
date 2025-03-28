@@ -1,7 +1,10 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
 .page {
-
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sections, 40px);
+  background-color: var(--deep-purple);
 }
 
 .decorated-zone {
@@ -38,7 +41,8 @@
   height: 668px;
   background-image: url("../images/cover-image-dark.png");
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
+  object-fit: cover;
   padding: var(--zone-padding, 10px);
 }
 
@@ -113,7 +117,7 @@
   font-size: 116px;
   line-height: 83%;
   letter-spacing: 0%;
-  color: #DB00FF;
+  color: var(--neon);
   text-shadow: 4px 4px var(--pink);
 
   justify-self: center;
@@ -131,10 +135,91 @@
   line-height: 23.4px;
 
   background-color: var(--pink);
-  color: #000028;
+  color: var(--deep-purple);
 
   align-content: center;
 
   margin-bottom: 31px;
 }
 
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-content, 50px);
+  padding: var(--zone-padding, 10px);
+}
+
+.content__text-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-text-blocks, 20px);
+}
+
+.content__text-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-text-sections, 10px);
+}
+
+.content__text-block-title {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--pink);
+}
+
+.content__text-section-title {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--deep-purple);
+  background-color: var(--pink);
+}
+
+.content__unbolded .content__text-section-title:nth-child(1) {
+  font-weight: 400;
+}
+
+.content__text-section-text {
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 23.4px;
+  color: var(--soft-pink);
+}
+
+.content__text-section-text span {
+  text-shadow: 2px 2px var(--pink);
+}
+
+.content__text-section-text a {
+  text-decoration: none;
+}
+
+.content__images {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-images);
+}
+
+.footer {
+  width: 100%;
+  height: 667px;
+  position: relative;
+  font-family: "IBM Plex Mono", sans-serif;
+  font-weight: 700;
+  font-size: 116px;
+  line-height: 83%;
+
+  text-align: center;
+  align-content: center;
+
+  padding: var(--zone-padding, 10px);
+
+  text-shadow: 2px 2px var(--pink);
+
+  color: var(--neon);
+
+}
