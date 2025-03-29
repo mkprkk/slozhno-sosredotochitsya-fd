@@ -6,6 +6,7 @@
 
 :root.theme-dark {
   --pink: #FF0070;
+  --pink-rgb: 255, 0, 112;
   --deep-purple: #000028;
   --soft-pink: #F1B2CE;
   --neon: #DB00FF;
@@ -23,7 +24,7 @@
   --shadow-color: var(--pink);
   --header-bg-color: var(--pink);
   --header-text-color: var(--deep-purple);
-  --menu-color: var(--pink);
+  --menu-color: var(--pink-rgb);
 }
 
 .theme-dark .page {
@@ -45,7 +46,7 @@
     --rec-visibility: visible;
     --rec-color: #FF0070;
     --decor-color: #FF0070;
-    --menu-color: #FF0070;
+    --menu-color: 255, 0, 112;
   }
 }
 

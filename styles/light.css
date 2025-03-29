@@ -7,6 +7,7 @@
 :root.theme-light {
   --pink: #FF8DCB;
   --gray: #353430;
+  --gray-rgb: 53, 52, 48;
   --soft-pink: #F1B2CE;
   --more-soft-pink: #FFC2E6;
   --light-pink: #FFF1F7;
@@ -23,7 +24,7 @@
   --shadow-color: var(--pink);
   --header-bg-color: var(--pink);
   --header-text-color: var(--gray);
-  --menu-color: var(--gray);
+  --menu-color: var(--gray-rgb);
 }
 
 .theme-light .page {
@@ -45,6 +46,6 @@
     --rec-visibility: hidden;
     --rec-color: #FF8DCB;
     --decor-color: #353430;
-    --menu-color: #353430;
+    --menu-color: 53, 52, 48;
   }
 }
