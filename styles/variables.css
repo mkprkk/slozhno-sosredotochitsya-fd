@@ -4,13 +4,15 @@
 */
 :root {
   --pink: #FF0070;
+  --deep-purple: #000028;
+  --soft-pink: #F1B2CE;
+  --neon: #DB00FF;
+
   --zone-padding: 10px;
+  
   --gap-sections: 40px;
   --gap-content: 50px;
   --gap-text-blocks: 20px;
   --gap-images: 10px;
   --gap-text-sections: 10px;
-  --deep-purple: #000028;
-  --soft-pink: #F1B2CE;
-  --neon: #DB00FF;
 }
