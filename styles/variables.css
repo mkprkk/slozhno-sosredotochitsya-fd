@@ -7,7 +7,9 @@
 
   --header-footer-height: 668px;
 
-  --gap-sections: 40px;
+  --title-font-size: 116px;
+
+  --gap-sections: 32px;
   --gap-content: 50px;
   --gap-text-blocks: 20px;
   --gap-images: 10px;
@@ -25,7 +27,11 @@
 
     --header-footer-height: 1024px;
 
-    --gap-sections: 60px;
+    --title-font-size: 120px;
+
+    --template-width: 236px;
+
+    --gap-sections: 45px;
     --gap-content: 80px;
     --gap-images: 20px;
 
@@ -39,9 +45,13 @@
   :root {
     --header-footer-height: 768px;
 
+    --title-font-size: 150px;
+
+    --template-width: 315px;
+
     --b-margin-header-rec: 0;
     --b-margin-header-title: 114px;
-    --b-margin-header-menu: 237px;
+    --b-margin-header-menu: 250px;
 
   }
 }
