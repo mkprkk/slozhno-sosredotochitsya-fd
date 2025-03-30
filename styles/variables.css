@@ -3,16 +3,45 @@
   и их переопределение под различные устройства
 */
 :root {
-  --pink: #FF0070;
-  --deep-purple: #000028;
-  --soft-pink: #F1B2CE;
-  --neon: #DB00FF;
-
   --zone-padding: 10px;
-  
+
+  --header-footer-height: 668px;
+
   --gap-sections: 40px;
   --gap-content: 50px;
   --gap-text-blocks: 20px;
   --gap-images: 10px;
   --gap-text-sections: 10px;
+
+  --b-margin-header-menu: 65px;
+  --r-margin-header-rec: 29px;
+  --b-margin-header-rec: 39px;
+  --b-margin-header-title: 55px;
+}
+
+@media (width >= 768px) {
+  :root {
+    --zone-padding: 20px;
+
+    --header-footer-height: 1024px;
+
+    --gap-sections: 60px;
+    --gap-content: 80px;
+    --gap-images: 20px;
+
+    --b-margin-header-rec: 146px;
+    --b-margin-header-title: 162px;
+    --b-margin-header-menu: 173px;
+  }
+}
+
+@media (width >= 1024px) {
+  :root {
+    --header-footer-height: 768px;
+
+    --b-margin-header-rec: 0;
+    --b-margin-header-title: 114px;
+    --b-margin-header-menu: 237px;
+
+  }
 }
