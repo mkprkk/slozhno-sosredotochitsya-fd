@@ -1,5 +1,6 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
 
+/* Общие стили страницы */
 .page {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,7 @@
   background-color: var(--bg-color, #000028);
 }
 
+/* Стили для декоративных уголков */
 .decorated-zone {
   width: 100%;
   height: 100%;
@@ -18,7 +20,7 @@
   position: absolute;
   width: 26px;
   height: 26px;
-  --dc-color: var(--decor-color, #FF0070);
+  --dc-color: var(--decor-color, #ff0070);
 }
 
 .decorated-zone::before {
@@ -35,23 +37,21 @@
   border-left: 1px solid var(--dc-color);
 }
 
-
+/* Стили шапки сайта */
 .header {
   position: relative;
-  width: 100%;
-  height: var(--header-footer-height, 668px);
+  min-height: var(--header-footer-min-height, 668px);
+  height: 100vh;
   background: var(--bg-image, url("../images/cover-image-dark.png"));
   background-size: cover;
   background-position: bottom;
-  object-fit: cover;
   padding: var(--zone-padding, 10px);
 }
 
+/* Стили меню темы */
 .header__theme-menu {
   justify-items: end;
-
   --mn-color: var(--menu-color, 255, 0, 112);
-
   margin-bottom: var(--b-margin-header-menu, 65px);
 }
 
@@ -59,13 +59,10 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
-  letter-spacing: 0%;
-  text-align: center;
   color: rgb(var(--mn-color));
 }
 
@@ -79,7 +76,7 @@
 }
 
 .header__theme-menu-button:hover:not(:disabled) {
-  border: 1px solid rgba(var(--mn-color), 0.4); 
+  border: 1px solid rgba(var(--mn-color), 0.4);
 }
 
 .header__theme-menu-button:focus-visible {
@@ -88,25 +85,25 @@
 }
 
 .header__theme-menu-button_active {
-  border: 1px solid rgb(var(--mn-color)); 
+  border: 1px solid rgb(var(--mn-color));
   cursor: default;
 }
 
+/* Стили для REC метки */
 .header__rec {
   visibility: var(--rec-visibility, visible);
   width: 33px;
   height: 26px;
   justify-self: end;
   position: relative;
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 400;
   font-size: 18px;
   line-height: 25px;
-  --rc-color: var(--rec-color, #FF0070);
+  --rc-color: var(--rec-color, #ff0070);
   color: var(--rc-color);
   text-transform: uppercase;
   margin-right: var(--r-margin-rec, 29px);
-
   margin-bottom: var(--b-margin-header-rec, 39px);
 }
 
@@ -122,35 +119,31 @@
   box-shadow: 0px 0px 4px 2px var(--rc-color);
 }
 
+/* Стили заголовка в шапке */
 .header__title {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 700;
   font-size: var(--title-font-size, 116px);
   line-height: 83%;
-  color: var(--h1-color, #DB00FF);
-  text-shadow: 4px 4px var(--shadow-color, #FF0070);
-
-  justify-self: start;
-
+  color: var(--h1-color, #db00ff);
+  text-shadow: 4px 4px var(--shadow-color, #ff0070);
   margin-bottom: var(--b-margin-header-title, 55px);
 }
 
+/* Стили текста в шапке */
 .header__text {
   width: 355px;
   min-height: 117px;
-
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-
-  background-color: var(--header-bg-color, #FF0070);
+  background-color: var(--header-bg-color, #ff0070);
   color: var(--header-text-color, #000028);
-
-  align-content: center;
   justify-self: end;
 }
 
+/* Стили основного контента */
 .content {
   display: flex;
   flex-direction: column;
@@ -158,6 +151,7 @@
   padding: var(--zone-padding, 10px);
 }
 
+/* Стили текстовых блоков */
 .content__text-block {
   display: flex;
   flex-direction: column;
@@ -170,39 +164,44 @@
   gap: var(--gap-text-sections, 10px);
 }
 
+/* Стили заголовков текстовых блоков */
 .content__text-block-title {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
-  color: var(--h2-color, #FF0070);
+  color: var(--h2-color, #ff0070);
 }
 
+/* Стили подзаголовков секций */
 .content__text-section-title {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
   color: var(--h3-color);
-  background-color: var(--h3-bg-color, #FF0070);
+  background-color: var(--h3-bg-color, #ff0070);
 }
 
+/* Стили для нежирных заголовков */
 .content__unbolded .content__text-section-title:nth-child(1) {
   font-weight: 400;
 }
 
+/* Стили основного текста */
 .content__text-section-text {
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
-  color: var(--text-color, #F1B2CE);
+  color: var(--text-color, #f1b2ce);
 }
 
 .content__text-section-text span {
-  text-shadow: 2px 2px var(--shadow-color, #FF0070);
+  text-shadow: 2px 2px var(--shadow-color, #ff0070);
 }
 
+/* Стили ссылок */
 .content__text-section-text a {
   position: relative;
   text-decoration: none;
@@ -220,9 +219,10 @@
 
 .content__text-section-text a:focus-visible {
   outline: none;
-  border: 1px solid var(--text-color, #F1B2CE);
+  border: 1px solid var(--text-color, #f1b2ce);
 }
 
+/* Стили блока с изображениями */
 .content__images-block {
   display: flex;
   flex-direction: column;
@@ -232,28 +232,26 @@
 .content__images {
   display: flex;
   flex-direction: column;
-  gap: var(--gap-images, 10px);
 }
 
+/* Стили подвала */
 .footer {
-  width: 100%;
-  height: var(--header-footer-height, 668px);
+  min-height: var(--header-footer-min-height, 668px);
+  height: 100vh;
   position: relative;
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 700;
   font-size: var(--title-font-size, 116px);
   line-height: 83%;
-
-  text-align: center;
-  align-content: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--zone-padding, 10px);
-
-  text-shadow: 2px 2px var(--shadow-color, #FF0070);
-
-  color: var(--h1-color, #DB00FF);
+  text-shadow: 2px 2px var(--shadow-color, #ff0070);
+  color: var(--h1-color, #db00ff);
 }
 
+/* Медиазапросы для планшетов */
 @media (width >= 768px) {
   .header__title {
     transform: translateX(calc(-1 * var(--zone-padding, -20px)));
@@ -275,11 +273,11 @@
   }
 
   .content__text-block-title {
-    grid-row: span 2; 
+    grid-row: span 2;
   }
 
   .content__flex-grid {
-    display: flex; 
+    display: flex;
   }
 
   .content__flex-grid .content__text-block-title {
@@ -288,40 +286,42 @@
 
   .content__images {
     display: grid;
-    gap: var(--gap-images); 
-    grid-template-areas: "pic1 pic1 pic2"
-                         "pic3 pic4 pic2"
-                         "pic3 pic5 pic5";  
+    gap: var(--gap-images, 20px);
+    grid-template-areas:
+      "pic1 pic1 pic2"
+      "pic3 pic4 pic2"
+      "pic3 pic5 pic5";
   }
-  
+
   .content__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
   }
-  
+
   .content__image:nth-child(1) {
     grid-area: pic1;
   }
-  
+
   .content__image:nth-child(2) {
     grid-area: pic2;
   }
-  
+
   .content__image:nth-child(3) {
     grid-area: pic3;
   }
-  
+
   .content__image:nth-child(4) {
     grid-area: pic4;
   }
-  
+
   .content__image:nth-child(5) {
-    grid-area: pic5;  
+    grid-area: pic5;
   }
 }
 
+/* Медиазапросы для десктопов */
 @media (width >=1024px) {
   .header__title {
     font-size: var(--title-font-size, 150px);

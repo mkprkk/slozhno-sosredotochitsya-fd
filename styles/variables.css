@@ -1,11 +1,9 @@
-/*
-  Переменные для вашего проекта
-  и их переопределение под различные устройства
-*/
 :root {
+  --main-font: "IBM Plex Mono", sans-serif;
+
   --zone-padding: 10px;
 
-  --header-footer-height: 668px;
+  --header-footer-min-height: 668px;
 
   --title-font-size: 116px;
 
@@ -25,7 +23,7 @@
   :root {
     --zone-padding: 20px;
 
-    --header-footer-height: 1024px;
+    --header-footer-min-height: 1024px;
 
     --title-font-size: 120px;
 
@@ -43,7 +41,7 @@
 
 @media (width >= 1024px) {
   :root {
-    --header-footer-height: 768px;
+    --header-footer-min-height: 768px;
 
     --title-font-size: 150px;
 
