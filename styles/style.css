@@ -5,7 +5,10 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap-sections, 40px);
-  background-color: var(--bg-color, #000028);
+  background: var(--bg-image, url("../images/cover-image-dark.png"));
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
 }
 
 /* Стили для декоративных уголков */
@@ -42,17 +45,19 @@
   position: relative;
   min-height: var(--header-footer-min-height, 668px);
   height: 100vh;
-  background: var(--bg-image, url("../images/cover-image-dark.png"));
-  background-size: cover;
-  background-position: bottom;
   padding: var(--zone-padding, 10px);
+
+  display: grid;
+  grid-template-rows: min-content 1fr 1fr 1fr;
 }
 
 /* Стили меню темы */
 .header__theme-menu {
   justify-items: end;
+  align-self: center;
   --mn-color: var(--menu-color, 255, 0, 112);
-  margin-bottom: var(--b-margin-header-menu, 65px);
+
+  grid-row: 2;
 }
 
 .header__theme-menu-list {
@@ -91,10 +96,6 @@
 
 /* Стили для REC метки */
 .header__rec {
-  visibility: var(--rec-visibility, visible);
-  width: 33px;
-  height: 26px;
-  justify-self: end;
   position: relative;
   font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 400;
@@ -103,8 +104,13 @@
   --rc-color: var(--rec-color, #ff0070);
   color: var(--rc-color);
   text-transform: uppercase;
+
   margin-right: var(--r-margin-rec, 29px);
-  margin-bottom: var(--b-margin-header-rec, 39px);
+
+  visibility: var(--rec-visibility, visible);
+  justify-self: end;
+
+  grid-row: 1;
 }
 
 .header__rec::after {
@@ -123,24 +129,34 @@
 .header__title {
   font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 700;
-  font-size: var(--title-font-size, 116px);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   color: var(--h1-color, #db00ff);
   text-shadow: 4px 4px var(--shadow-color, #ff0070);
-  margin-bottom: var(--b-margin-header-title, 55px);
+
+  align-self: start;
+  justify-self: center;
+
+  grid-row: 3;
 }
 
 /* Стили текста в шапке */
 .header__text {
-  width: 355px;
-  min-height: 117px;
+  max-width: 355px;
+  width: 100%;
   font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 700;
   font-size: 18px;
   line-height: 23.4px;
   background-color: var(--header-bg-color, #ff0070);
   color: var(--header-text-color, #000028);
+
+  align-self: center;
   justify-self: end;
+
+  grid-row: 4;
+
+  transform: translateY(-10px);
 }
 
 /* Стили основного контента */
@@ -184,8 +200,12 @@
 }
 
 /* Стили для нежирных заголовков */
-.content__unbolded .content__text-section-title:nth-child(1) {
+.content__unbolded .content__text-section-title {
   font-weight: 400;
+}
+
+.content__unbolded .content__text-section-title.content__bolded {
+  font-weight: 700;
 }
 
 /* Стили основного текста */
@@ -232,6 +252,7 @@
 .content__images {
   display: flex;
   flex-direction: column;
+  gap: var(--gap-images, 10px);
 }
 
 /* Стили подвала */
@@ -241,7 +262,7 @@
   position: relative;
   font-family: var(--main-font, "IBM Plex Mono");
   font-weight: 700;
-  font-size: var(--title-font-size, 116px);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   display: flex;
   align-items: center;
@@ -256,11 +277,12 @@
   .header__title {
     transform: translateX(calc(-1 * var(--zone-padding, -20px)));
     justify-self: start;
-    font-size: var(--title-font-size, 120px);
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    align-self: center;
   }
 
   .header__text {
-    width: 364px;
+    max-width: 364px;
   }
 
   .content__text-block {
@@ -319,18 +341,24 @@
   .content__image:nth-child(5) {
     grid-area: pic5;
   }
+
+  .footer {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
 }
 
 /* Медиазапросы для десктопов */
 @media (width >=1024px) {
   .header__title {
-    font-size: var(--title-font-size, 150px);
     letter-spacing: 5px;
   }
 
   .header__text {
-    width: 491px;
-    min-height: 71px;
+    max-width: 491px;
+  }
+
+  .header__theme-menu {
+    align-self: start;
   }
 
   .header__theme-menu-list {
