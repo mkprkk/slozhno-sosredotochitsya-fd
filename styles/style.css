@@ -155,8 +155,6 @@
   justify-self: end;
 
   grid-row: 4;
-
-  transform: translateY(-10px);
 }
 
 /* Стили основного контента */
@@ -275,7 +273,7 @@
 /* Медиазапросы для планшетов */
 @media (width >= 768px) {
   .header__title {
-    transform: translateX(calc(-1 * var(--zone-padding, -20px)));
+    margin-inline-start: calc(-1 * var(--zone-padding, -20px));
     justify-self: start;
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     align-self: center;
@@ -349,10 +347,6 @@
 
 /* Медиазапросы для десктопов */
 @media (width >=1024px) {
-  .header__title {
-    letter-spacing: 5px;
-  }
-
   .header__text {
     max-width: 491px;
   }
@@ -364,7 +358,7 @@
   .header__theme-menu-list {
     display: flex;
     flex-direction: row;
-    transform: translateY(-26px);
+    margin-top: -26px;
     justify-self: center;
   }
 
@@ -386,9 +380,5 @@
 
   .content__flex-grid .content__text-section {
     grid-column: initial;
-  }
-
-  .footer {
-    letter-spacing: 5px;
   }
 }
